@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LuxeNest Interiors — Mumbai</title>
+<meta name="description" content="LuxeNest is a premier full-service interior design studio based in Mumbai, crafting bespoke residential and commercial spaces across India since 2009.">
+<meta property="og:title" content="LuxeNest Interiors — Mumbai">
+<meta property="og:description" content="Premier interior design studio crafting bespoke spaces across India.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0A0906">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230A0906'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='20' fill='%23C49A3C'%3EL%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=DM+Sans:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit}
+
+:root{
+  --bg:#0A0906;--bg1:#0E0C09;--bg2:#131008;--bg3:#1A160F;--bg4:#222018;--bg5:#2E2A20;
+  --tx:#F5F0E8;--tx1:#DDD7CC;--tx2:#A89F8F;--tx3:#706858;--tx4:#48413A;
+  --g1:#7A5E28;--g2:#C49A3C;--g3:#E8C46A;--g4:#F0D490;
+  --g-grd:linear-gradient(90deg,#7A5E28,#C49A3C 50%,#E8C46A);
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'DM Sans','Helvetica Neue',sans-serif;
+  --ease:cubic-bezier(0.25,0.10,0.25,1.00);
+  --spring:cubic-bezier(0.16,1.00,0.30,1.00);
+  --cinematic:cubic-bezier(0.76,0.00,0.24,1.00);
+  --nav-h:78px;--vgap:clamp(96px,11vw,160px);--max:1320px;--px:clamp(28px,5.5vw,96px);
+}
+
+html{scroll-behavior:smooth;font-size:16px;-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg);color:var(--tx);font-family:var(--sans);font-weight:300;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;opacity:0;
+  transition:opacity 1.2s var(--ease);
+}
+body.rdy{opacity:1}
+body::after{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:8999;opacity:.032;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+  background-size:160px 160px;mix-blend-mode:overlay;
+}
+
+.w{width:100%;max-width:var(--max);margin:0 auto;padding:0 var(--px)}
+.sec{padding:var(--vgap) 0}
+
+/* Progress */
+#prog{position:fixed;top:0;left:0;right:0;z-index:1200;height:1px;pointer-events:none}
+#prog-bar{height:100%;width:0;background:linear-gradient(90deg,var(--g1),var(--g2) 50%,var(--g3))}
+
+/* Cursor */
+#c-dot{position:fixed;top:0;left:0;z-index:9999;width:5px;height:5px;background:var(--g3);border-radius:50%;transform:translate(-50%,-50%);pointer-events:none;transition:transform .1s,opacity .3s}
+#c-ring{position:fixed;top:0;left:0;z-index:9998;width:36px;height:36px;border:1px solid rgba(196,154,60,.35);border-radius:50%;transform:translate(-50%,-50%);pointer-events:none;transition:width .6s var(--spring),height .6s var(--spring),border-color .4s,opacity .4s}
+#c-ring.hov{width:58px;height:58px;border-color:rgba(196,154,60,.2)}
+#c-ring.dn{width:22px;height:22px;border-color:rgba(196,154,60,.8)}
+@media(hover:none){#c-dot,#c-ring{display:none}}
+
+/* Reveal system */
+[data-v]{opacity:0;transform:translateY(44px);transition:opacity 1.2s var(--spring),transform 1.2s var(--spring);will-change:transform,opacity}
+[data-v=left]{transform:translateX(-44px)}
+[data-v=right]{transform:translateX(44px)}
+[data-v=scale]{transform:scale(.94) translateY(20px)}
+[data-v=fade]{transform:none}
+[data-v].vis{opacity:1;transform:none}
+[data-delay="1"]{transition-delay:.08s}
+[data-delay="2"]{transition-delay:.18s}
+[data-delay="3"]{transition-delay:.30s}
+[data-delay="4"]{transition-delay:.44s}
+[data-delay="5"]{transition-delay:.60s}
+[data-delay="6"]{transition-delay:.78s}
+
+/* Typography */
+.ey{font-family:var(--sans);font-size:clamp(9px,.72vw,10.5px);font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--g2)}
+.disp{font-family:var(--serif);font-size:clamp(60px,9vw,128px);font-weight:800;line-height:.88;letter-spacing:-.02em}
+.h2{font-family:var(--serif);font-size:clamp(34px,4.4vw,64px);font-weight:700;line-height:1.04;letter-spacing:-.012em}
+.h3{font-family:var(--serif);font-size:clamp(22px,2.4vw,32px);font-weight:600;line-height:1.2}
+.lead{font-size:clamp(14px,1vw,16px);font-weight:300;line-height:1.85;color:var(--tx2);max-width:52ch}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav-h);display:flex;align-items:center;padding:0 var(--px);transition:background .65s var(--ease),box-shadow .65s}
+.nav.stuck{background:rgba(10,9,6,.92);backdrop-filter:blur(24px) saturate(1.4);-webkit-backdrop-filter:blur(24px) saturate(1.4);box-shadow:0 1px 0 rgba(196,154,60,.08)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;width:100%}
+.brand{display:flex;flex-direction:column;gap:3px;cursor:pointer}
+.brand-name{font-family:var(--serif);font-size:23px;font-weight:700;letter-spacing:.04em;color:var(--tx);line-height:1;transition:color .3s}
+.brand:hover .brand-name{color:var(--g3)}
+.brand-sub{font-size:7.5px;font-weight:500;letter-spacing:.44em;text-transform:uppercase;color:var(--g2);line-height:1}
+.nav-links{display:flex;align-items:center;gap:52px;list-style:none}
+.nav-links a{font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--tx2);position:relative;transition:color .32s}
+.nav-links a.active{color:var(--g3)}
+.nav-links a::after{content:'';position:absolute;bottom:-6px;left:0;width:0;height:1px;background:var(--g2);transition:width .5s var(--cinematic)}
+.nav-links a.active::after{width:100%}
+.nav-links a:hover{color:var(--tx)}
+.nav-links a:hover::after{width:100%}
+.nav-pill{font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;border:1px solid var(--g2);color:var(--g3);padding:13px 30px;cursor:pointer;background:transparent;position:relative;overflow:hidden;transition:color .5s var(--cinematic),box-shadow .4s,transform .35s var(--spring)}
+.nav-pill::before{content:'';position:absolute;inset:0;background:var(--g2);transform:scaleY(0);transform-origin:bottom;transition:transform .55s var(--cinematic)}
+.nav-pill span{position:relative;z-index:1}
+.nav-pill:hover{color:var(--bg);box-shadow:0 8px 28px rgba(196,154,60,.22);transform:translateY(-1px)}
+.nav-pill:hover::before{transform:scaleY(1)}
+.hbg{display:none;flex-direction:column;gap:6px;background:none;border:none;cursor:pointer;padding:4px}
+.hbg i{display:block;width:28px;height:1px;background:var(--tx);transition:transform .52s var(--spring),opacity .3s,width .35s}
+.hbg.on i:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hbg.on i:nth-child(2){opacity:0;width:0}
+.hbg.on i:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mnav{position:fixed;inset:0;z-index:999;background:var(--bg1);display:flex;flex-direction:column;padding:calc(var(--nav-h) + 60px) var(--px) 52px;transform:translateY(-100%);transition:transform .78s var(--spring)}
+.mnav.on{transform:translateY(0)}
+.mnav ul{list-style:none;flex:1;display:flex;flex-direction:column;gap:2px}
+.mnav ul a{display:block;font-family:var(--serif);font-size:clamp(38px,10vw,62px);font-weight:700;line-height:1.22;color:var(--tx);opacity:0;transform:translateY(28px);transition:opacity .48s var(--spring),transform .48s var(--spring),color .3s}
+.mnav.on ul li:nth-child(1) a{transition-delay:.07s;opacity:1;transform:none}
+.mnav.on ul li:nth-child(2) a{transition-delay:.14s;opacity:1;transform:none}
+.mnav.on ul li:nth-child(3) a{transition-delay:.21s;opacity:1;transform:none}
+.mnav.on ul li:nth-child(4) a{transition-delay:.28s;opacity:1;transform:none}
+.mnav.on ul li:nth-child(5) a{transition-delay:.35s;opacity:1;transform:none}
+.mnav ul a:hover{color:var(--g3)}
+.mnav-contact{border-top:1px solid var(--bg4);padding-top:28px;font-size:12px;font-weight:300;color:var(--tx2);line-height:2}
+
+/* HERO */
+.hero{position:relative;height:100svh;min-height:740px;display:flex;align-items:flex-end;overflow:hidden}
+.hero-media{position:absolute;inset:0;background:var(--bg)}
+.hero-media img{opacity:.45;transform:scale(1.1);animation:kzoom 22s var(--ease) forwards;filter:brightness(.7) saturate(.9) sepia(.12)}
+@keyframes kzoom{to{transform:scale(1)}}
+.hero-veil{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,4,2,.97) 0%,rgba(5,4,2,.55) 35%,rgba(5,4,2,.1) 60%,transparent 80%),linear-gradient(110deg,rgba(5,4,2,.6) 0%,transparent 55%),linear-gradient(to bottom,rgba(5,4,2,.45) 0%,transparent 22%)}
+.hero-body{position:relative;z-index:3;width:100%;padding:0 var(--px) clamp(70px,10vh,120px);display:grid;grid-template-columns:1fr 1fr;align-items:flex-end;gap:44px}
+.hero-tag{display:flex;align-items:center;gap:18px;margin-bottom:38px;opacity:0;animation:lift 1s var(--spring) .3s forwards}
+.hero-tag .ey{color:var(--g3);letter-spacing:.34em}
+.hero-tag-rule{width:30px;height:1px;background:rgba(232,196,106,.35);flex-shrink:0}
+.hero-title{font-family:var(--serif);font-size:clamp(48px,7.5vw,128px);font-weight:900;line-height:.86;letter-spacing:-.03em;color:var(--tx);opacity:0;animation:lift 1.3s var(--spring) .5s forwards}
+.hero-title .gold{color:var(--g3)}
+.hero-aside{display:flex;flex-direction:column;align-items:flex-end;gap:38px;opacity:0;animation:lift 1.1s var(--spring) .82s forwards}
+.hero-desc{font-size:clamp(14px,.96vw,15.5px);font-weight:300;line-height:1.9;color:rgba(245,240,232,.45);max-width:36ch;text-align:right}
+.hero-actions{display:flex;align-items:center;gap:30px}
+.hero-scroll{position:absolute;bottom:48px;left:50%;transform:translateX(-50%);z-index:3;display:flex;flex-direction:column;align-items:center;gap:14px;opacity:0;animation:fade 1s 2s forwards}
+.hero-scroll-line{width:1px;height:58px;background:linear-gradient(to bottom,transparent,rgba(196,154,60,.4));animation:scrollbeat 3s ease-in-out infinite}
+@keyframes scrollbeat{0%,100%{opacity:.3;transform:scaleY(1)}50%{opacity:.7;transform:scaleY(1.08) translateY(5px)}}
+.hero-scroll span{font-size:7.5px;letter-spacing:.46em;text-transform:uppercase;color:rgba(245,240,232,.2);writing-mode:vertical-rl;transform:rotate(180deg);font-weight:500}
+
+/* BUTTONS */
+.btn-gold{display:inline-flex;align-items:center;justify-content:center;padding:17px 46px;font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.26em;text-transform:uppercase;border:1px solid var(--g2);color:var(--g3);background:transparent;cursor:pointer;position:relative;overflow:hidden;transition:color .5s var(--cinematic),box-shadow .4s,transform .4s var(--spring)}
+.btn-gold::before{content:'';position:absolute;inset:0;background:var(--g2);transform:scaleY(0);transform-origin:bottom;transition:transform .68s var(--cinematic)}
+.btn-gold .btx{position:relative;z-index:1}
+.btn-gold:hover{color:var(--bg);box-shadow:0 14px 42px rgba(196,154,60,.24);transform:translateY(-2px)}
+.btn-gold:hover::before{transform:scaleY(1)}
+.btn-ghost{display:inline-flex;align-items:center;justify-content:center;padding:17px 46px;font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.26em;text-transform:uppercase;border:1px solid rgba(245,240,232,.14);color:rgba(245,240,232,.55);background:transparent;cursor:pointer;position:relative;overflow:hidden;transition:color .5s var(--cinematic),border-color .4s,transform .4s var(--spring)}
+.btn-ghost::before{content:'';position:absolute;inset:0;background:rgba(245,240,232,.06);transform:scaleY(0);transform-origin:bottom;transition:transform .68s var(--cinematic)}
+.btn-ghost .btx{position:relative;z-index:1}
+.btn-ghost:hover{color:var(--tx);border-color:rgba(245,240,232,.3);transform:translateY(-2px)}
+.btn-ghost:hover::before{transform:scaleY(1)}
+.lnk{display:inline-flex;align-items:center;gap:14px;font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--tx2);cursor:pointer;background:none;border:none;padding:0;position:relative;transition:color .38s var(--ease)}
+.lnk::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--g2);transition:width .55s var(--cinematic)}
+.lnk:hover{color:var(--g3)}
+.lnk:hover::after{width:100%}
+.lnk .arr{transition:transform .45s var(--spring)}
+.lnk:hover .arr{transform:translateX(8px)}
+
+/* MARQUEE */
+.mq{background:var(--bg2);padding:18px 0;overflow:hidden;border-top:1px solid rgba(196,154,60,.06);border-bottom:1px solid rgba(196,154,60,.06)}
+.mq-track{display:flex;width:max-content;animation:mqscroll 40s linear infinite}
+.mq-item{display:flex;align-items:center;gap:28px;padding:0 28px;white-space:nowrap;font-size:9px;font-weight:500;letter-spacing:.36em;text-transform:uppercase;color:var(--tx3)}
+.mq-item .dot{width:2.5px;height:2.5px;border-radius:50%;background:var(--g2);opacity:.6}
+@keyframes mqscroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* INTRO */
+.intro-wrap{background:var(--bg1)}
+.intro-g{display:grid;grid-template-columns:auto 1fr;gap:clamp(44px,8vw,136px);align-items:start}
+.intro-ghost{font-family:var(--serif);font-size:clamp(120px,18vw,232px);font-weight:900;line-height:.96;color:rgba(196,154,60,.06);user-select:none;letter-spacing:-.02em;-webkit-mask:linear-gradient(to bottom,#000 55%,transparent);mask:linear-gradient(to bottom,#000 55%,transparent)}
+.intro-h{font-family:var(--serif);font-size:clamp(32px,4.2vw,58px);font-weight:700;line-height:1.05;letter-spacing:-.012em;color:var(--tx);margin-bottom:36px}
+.intro-h .gold{color:var(--g3)}
+.intro-body{font-size:clamp(14px,.96vw,16px);font-weight:300;line-height:1.9;color:var(--tx2);max-width:52ch;margin-bottom:60px}
+.stats{display:flex;gap:64px;margin-bottom:60px}
+.stat-num{font-family:var(--serif);font-size:clamp(44px,5.2vw,66px);font-weight:800;line-height:1;color:var(--tx)}
+.stat-lbl{font-size:9.5px;font-weight:500;letter-spacing:.26em;text-transform:uppercase;color:var(--tx3);margin-top:12px}
+.stats-rule{width:100%;height:1px;background:linear-gradient(90deg,rgba(196,154,60,.2),transparent);margin-bottom:44px}
+
+/* SERVICES */
+.svc-wrap{background:var(--bg)}
+.sec-hd{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:clamp(54px,7vw,96px);gap:32px}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--bg3)}
+.svc{background:var(--bg1);padding:clamp(40px,5vw,66px) clamp(30px,3.5vw,52px);position:relative;overflow:hidden;cursor:default;transition:background .55s var(--ease),transform .5s var(--spring)}
+.svc::before{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--g-grd);transition:width .68s var(--cinematic)}
+.svc::after{content:'';position:absolute;inset:0;background:linear-gradient(145deg,rgba(196,154,60,.04) 0%,transparent 55%);opacity:0;transition:opacity .55s}
+.svc:hover{background:var(--bg2);transform:translateY(-2px)}
+.svc:hover::before{width:100%}
+.svc:hover::after{opacity:1}
+.svc-num{font-family:var(--serif);font-size:11px;letter-spacing:.26em;color:var(--g2);margin-bottom:38px;font-weight:600}
+.svc-ico{width:38px;height:38px;margin-bottom:30px;opacity:.35}
+.svc-title{font-family:var(--serif);font-size:clamp(20px,2vw,27px);font-weight:700;line-height:1.2;color:var(--tx);margin-bottom:16px}
+.svc-body{font-size:13px;font-weight:300;line-height:1.85;color:var(--tx2);margin-bottom:38px;max-width:36ch}
+.svc-cta{font-size:9.5px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--g2);display:inline-flex;align-items:center;gap:10px;transition:gap .42s var(--spring),color .35s}
+.svc:hover .svc-cta{gap:22px;color:var(--g3)}
+
+/* PORTFOLIO */
+.port-wrap{background:var(--bg1)}
+.port-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.8vw,20px)}
+.port-item{position:relative;overflow:hidden;cursor:pointer;background:var(--bg3);isolation:isolate}
+.port-item.wide{grid-column:1/-1}
+.port-img-box{position:relative;overflow:hidden}
+.port-item.wide .port-img-box{height:clamp(380px,52vw,640px)}
+.port-item:not(.wide) .port-img-box{height:clamp(260px,31vw,420px)}
+.port-img{filter:saturate(.8) brightness(.8);transition:transform 1.1s var(--cinematic),filter 1.1s var(--cinematic)}
+.port-item:hover .port-img{transform:scale(1.06);filter:saturate(.95) brightness(.9)}
+.port-veil{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,4,2,.9) 0%,rgba(5,4,2,.2) 45%,transparent 70%);opacity:0;transition:opacity .65s var(--cinematic)}
+.port-item:hover .port-veil{opacity:1}
+.port-ov{position:absolute;bottom:0;left:0;right:0;padding:clamp(26px,3vw,38px);z-index:2;opacity:0;transform:translateY(14px);transition:opacity .58s var(--cinematic),transform .58s var(--cinematic)}
+.port-item:hover .port-ov{opacity:1;transform:none}
+.port-ov-tag{font-size:8.5px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--g2);margin-bottom:9px}
+.port-ov-name{font-family:var(--serif);font-size:clamp(24px,3.4vw,46px);font-weight:700;color:var(--tx);line-height:1.0}
+.port-item::after{content:'';position:absolute;inset:0;border:1px solid rgba(196,154,60,0);pointer-events:none;z-index:3;transition:border-color .62s var(--cinematic)}
+.port-item:hover::after{border-color:rgba(196,154,60,.18)}
+.port-info{padding:24px 0 0;display:flex;justify-content:space-between;align-items:flex-start}
+.port-num{font-size:9.5px;font-weight:500;letter-spacing:.2em;color:var(--g2);margin-bottom:6px}
+.port-name{font-family:var(--serif);font-size:clamp(18px,2vw,25px);font-weight:700;color:var(--tx);transition:color .35s}
+.port-item:hover .port-name{color:var(--g3)}
+.port-type{font-size:9.5px;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:var(--tx3);margin-top:5px}
+.port-arr{width:40px;height:40px;border:1px solid var(--bg4);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:4px;transition:border-color .4s,background .4s,transform .52s var(--spring)}
+.port-item:hover .port-arr{border-color:var(--g2);background:var(--g2);transform:rotate(-45deg)}
+.port-arr path{transition:stroke .35s}
+.port-item:hover .port-arr path{stroke:var(--bg)}
+
+/* BEFORE/AFTER SLIDER */
+.ba-wrap{background:var(--bg);padding:var(--vgap) 0}
+.ba-label{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:clamp(40px,5vw,72px);gap:32px}
+.ba-container{position:relative;overflow:hidden;cursor:col-resize;user-select:none;height:clamp(320px,44vw,580px);border:1px solid var(--bg3)}
+.ba-after,.ba-before{position:absolute;inset:0}
+.ba-after img,.ba-before img{width:100%;height:100%;object-fit:cover;pointer-events:none}
+.ba-before{clip-path:inset(0 50% 0 0);transition:clip-path 0s}
+.ba-divider{position:absolute;top:0;bottom:0;width:1px;background:var(--g3);left:50%;transform:translateX(-50%);z-index:10;pointer-events:none}
+.ba-handle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:11;width:42px;height:42px;border-radius:50%;background:var(--g2);display:flex;align-items:center;justify-content:center;pointer-events:none;box-shadow:0 4px 20px rgba(0,0,0,.5)}
+.ba-handle svg{width:20px;height:20px}
+.ba-pill{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);z-index:12;background:rgba(10,9,6,.75);border:1px solid rgba(196,154,60,.2);padding:7px 18px;font-size:8.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--tx2);pointer-events:none;white-space:nowrap;backdrop-filter:blur(8px)}
+.ba-tag{position:absolute;top:20px;z-index:9;font-size:8.5px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;padding:6px 14px;background:rgba(10,9,6,.7);backdrop-filter:blur(8px)}
+.ba-tag.before{left:20px;color:var(--tx3)}
+.ba-tag.after{right:20px;color:var(--g3)}
+
+/* PROCESS */
+.proc-wrap{background:var(--bg2);position:relative;overflow:hidden}
+.proc-wrap::before{content:'PROCESS';position:absolute;right:-10px;bottom:-10px;font-family:var(--serif);font-size:clamp(110px,19vw,240px);font-weight:900;letter-spacing:-.025em;color:rgba(196,154,60,.03);pointer-events:none;user-select:none;line-height:1}
+.proc-wrap::after{content:'';position:absolute;top:0;left:var(--px);right:var(--px);height:1px;background:linear-gradient(90deg,transparent,rgba(196,154,60,.2) 30%,rgba(196,154,60,.2) 70%,transparent)}
+.proc-hd{margin-bottom:clamp(64px,9vw,116px);position:relative;z-index:1}
+.proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--bg3);position:relative;z-index:1}
+.proc-step{background:var(--bg2);padding:clamp(34px,4.5vw,60px) clamp(26px,3vw,46px);border-top:1px solid rgba(196,154,60,.07);position:relative;overflow:hidden;transition:background .5s}
+.proc-step::before{content:'';position:absolute;left:0;top:0;width:2px;height:0;background:var(--g-grd);transition:height .65s var(--cinematic)}
+.proc-step:hover::before{height:100%}
+.proc-step:hover{background:var(--bg3)}
+.proc-n{font-family:var(--serif);font-size:clamp(58px,7.5vw,94px);font-weight:900;line-height:.84;color:rgba(196,154,60,.06);margin-bottom:36px}
+.proc-title{font-family:var(--serif);font-size:clamp(19px,1.9vw,25px);font-weight:700;color:var(--tx);margin-bottom:18px}
+.proc-body{font-size:13px;font-weight:300;line-height:1.85;color:var(--tx2)}
+
+/* TESTIMONIALS */
+.tst-wrap{background:var(--bg1)}
+.tst-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,2vw,20px)}
+.tst-card{background:var(--bg2);padding:clamp(40px,4.5vw,60px);position:relative;border:1px solid var(--bg3);transition:box-shadow .55s,transform .55s var(--spring),border-color .45s}
+.tst-card:hover{box-shadow:0 10px 52px rgba(0,0,0,.35);transform:translateY(-5px);border-color:rgba(196,154,60,.12)}
+.tst-card::before{content:'\201C';font-family:var(--serif);font-size:108px;line-height:.5;color:rgba(196,154,60,.07);position:absolute;top:32px;left:36px;transition:color .4s}
+.tst-card:hover::before{color:rgba(196,154,60,.14)}
+.tst-quote{font-family:var(--serif);font-size:clamp(17px,1.55vw,21px);font-weight:500;line-height:1.6;color:var(--tx1);margin-bottom:36px;position:relative;z-index:1;padding-top:38px}
+.tst-rule{width:28px;height:1px;background:var(--g2);margin-bottom:18px}
+.tst-name{font-size:10.5px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--tx)}
+.tst-proj{font-size:10.5px;font-weight:300;color:var(--tx3);margin-top:5px}
+
+/* BRAND FEATURE */
+.bf{position:relative;overflow:hidden;min-height:clamp(500px,62vw,760px);display:flex;align-items:center}
+.bf-media{position:absolute;inset:0;background:var(--bg)}
+.bf-media img{opacity:.22;filter:saturate(.9) brightness(.7) sepia(.1);transform:scale(1.06);transition:transform 14s var(--ease),opacity 14s}
+.bf:hover .bf-media img{transform:scale(1);opacity:.28}
+.bf-veil{position:absolute;inset:0;background:linear-gradient(118deg,rgba(5,4,2,.94) 30%,rgba(5,4,2,.12) 100%),linear-gradient(to top,rgba(5,4,2,.6) 0%,transparent 35%)}
+.bf-vr{position:absolute;top:0;bottom:0;width:1px;pointer-events:none}
+.bf-vr.r1{right:var(--px);background:rgba(245,240,232,.03)}
+.bf-vr.r2{right:calc(var(--px) + clamp(28px,4vw,60px));background:rgba(196,154,60,.07)}
+.bf-content{position:relative;z-index:2;padding:clamp(80px,10vw,120px) var(--px);max-width:800px}
+.bf-title{font-family:var(--serif);font-size:clamp(42px,5.8vw,82px);font-weight:800;line-height:1.01;letter-spacing:-.02em;color:var(--tx);margin-bottom:30px}
+.bf-title .gold{color:var(--g3)}
+.bf-body{font-size:15px;font-weight:300;line-height:1.9;color:rgba(245,240,232,.38);max-width:46ch;margin-bottom:56px}
+
+/* FAQ */
+.faq-wrap{background:var(--bg)}
+.faq-grid{display:grid;grid-template-columns:1fr 1.65fr;gap:clamp(44px,9vw,152px)}
+.faq-sidebar{position:sticky;top:calc(var(--nav-h) + 44px)}
+.faq-item{border-bottom:1px solid var(--bg3)}
+.faq-btn{width:100%;background:none;border:none;padding:28px 0;display:flex;justify-content:space-between;align-items:center;gap:24px;cursor:pointer;text-align:left}
+.faq-q{font-family:var(--serif);font-size:clamp(18px,1.65vw,22px);font-weight:600;color:var(--tx);line-height:1.3;transition:color .35s}
+.faq-btn:hover .faq-q{color:var(--g3)}
+.faq-ic{flex-shrink:0;width:22px;height:22px;position:relative}
+.faq-ic::before,.faq-ic::after{content:'';position:absolute;background:var(--tx3);transition:transform .48s var(--cinematic),opacity .32s}
+.faq-ic::before{width:1px;height:14px;top:50%;left:50%;transform:translate(-50%,-50%)}
+.faq-ic::after{width:14px;height:1px;top:50%;left:50%;transform:translate(-50%,-50%)}
+.faq-item.on .faq-ic::before{opacity:0;transform:translate(-50%,-50%) rotate(90deg)}
+.faq-ans{max-height:0;overflow:hidden;transition:max-height .62s var(--cinematic)}
+.faq-ans-body{padding-bottom:28px;font-size:13.5px;font-weight:300;line-height:1.9;color:var(--tx2)}
+
+/* CONTACT */
+.ct-wrap{background:var(--bg1)}
+.ct-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(44px,8vw,120px);align-items:start}
+.ct-title{font-family:var(--serif);font-size:clamp(38px,5.2vw,72px);font-weight:700;line-height:1.0;letter-spacing:-.015em;color:var(--tx);margin-bottom:26px}
+.ct-title .gold{color:var(--g3)}
+.ct-body{font-size:14px;font-weight:300;line-height:1.9;color:var(--tx2);max-width:40ch;margin-bottom:56px}
+.ci-label{font-size:9px;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--g2);margin-bottom:8px}
+.ci-val{font-size:15px;font-weight:300;color:var(--tx2);margin-bottom:28px}
+.form{display:flex;flex-direction:column}
+.form-group{position:relative;margin-bottom:38px}
+.form-label{display:block;font-size:9px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--tx3);margin-bottom:12px}
+.form-ctrl{width:100%;background:transparent;border:none;border-bottom:1px solid var(--bg4);padding:10px 0;font-family:var(--sans);font-size:15px;font-weight:300;color:var(--tx);outline:none;appearance:none;transition:border-color .42s}
+.form-ctrl:focus{border-bottom-color:var(--g2)}
+.form-ctrl::placeholder{color:var(--tx4)}
+select.form-ctrl option{background:var(--bg1);color:var(--tx)}
+textarea.form-ctrl{resize:none;min-height:88px}
+.form-line{position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--g-grd);transition:width .52s var(--cinematic)}
+.form-ctrl:focus~.form-line{width:100%}
+@keyframes shake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+.form-group.error .form-ctrl{border-bottom-color:#c0392b}
+.form-group.error{animation:shake .42s var(--ease)}
+.form-err{font-size:9px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#c0392b;margin-top:7px;opacity:0;transition:opacity .3s;height:0;overflow:visible}
+.form-group.error .form-err{opacity:1}
+.form-submit{padding:18px 52px;background:transparent;border:1px solid var(--g2);font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--g3);cursor:pointer;position:relative;overflow:hidden;transition:color .5s var(--cinematic),box-shadow .4s,transform .4s var(--spring);align-self:flex-start;margin-top:12px}
+.form-submit::before{content:'';position:absolute;inset:0;background:var(--g2);transform:scaleY(0);transform-origin:bottom;transition:transform .68s var(--cinematic)}
+.form-submit .btx{position:relative;z-index:1}
+.form-submit:hover{color:var(--bg);box-shadow:0 12px 36px rgba(196,154,60,.22);transform:translateY(-2px)}
+.form-submit:hover::before{transform:scaleY(1)}
+.form-submit:disabled{opacity:.5;pointer-events:none}
+.form-note{font-size:11px;font-weight:300;color:var(--tx3);margin-top:14px;line-height:1.7}
+.form-note a{color:var(--g2);text-decoration:underline;text-underline-offset:3px}
+
+/* FOOTER */
+.foot{background:var(--bg);border-top:1px solid rgba(196,154,60,.06);padding:clamp(64px,8vw,104px) 0 44px}
+.foot-grid{display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;gap:clamp(32px,4vw,72px);margin-bottom:clamp(60px,7vw,96px)}
+.foot-brand-name{font-family:var(--serif);font-size:23px;font-weight:700;letter-spacing:.04em;color:var(--tx);margin-bottom:4px}
+.foot-brand-sub{font-size:7.5px;font-weight:500;letter-spacing:.44em;text-transform:uppercase;color:var(--g2)}
+.foot-tagline{margin-top:28px;font-size:12.5px;font-weight:300;line-height:1.82;color:var(--tx3);max-width:30ch}
+.foot-social{display:flex;gap:12px;margin-top:36px}
+.foot-social a{width:36px;height:36px;border:1px solid var(--bg3);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:border-color .38s,background .38s,transform .38s var(--spring)}
+.foot-social a:hover{border-color:var(--g2);background:rgba(196,154,60,.08);transform:translateY(-2px)}
+.foot-social a svg{opacity:.4;transition:opacity .32s}
+.foot-social a:hover svg{opacity:.85}
+.foot-col-title{font-size:8.5px;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--tx3);margin-bottom:22px}
+.foot-links{list-style:none;display:flex;flex-direction:column;gap:14px}
+.foot-links a{font-size:13px;font-weight:300;color:var(--tx3);transition:color .32s;position:relative;display:inline-block}
+.foot-links a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:var(--g2);transition:width .42s var(--cinematic)}
+.foot-links a:hover{color:var(--g3)}
+.foot-links a:hover::after{width:100%}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;border-top:1px solid rgba(196,154,60,.06);padding-top:36px}
+.foot-copy{font-size:10.5px;font-weight:300;color:var(--tx4);letter-spacing:.06em}
+.foot-legal{display:flex;gap:22px;list-style:none}
+.foot-legal a{font-size:10.5px;font-weight:300;color:var(--tx4);letter-spacing:.06em;transition:color .3s}
+.foot-legal a:hover{color:var(--tx2)}
+.sep{width:100%;height:1px;background:linear-gradient(90deg,transparent 0%,var(--bg3) 15%,var(--bg3) 85%,transparent 100%)}
+
+@keyframes lift{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+
+/* RESPONSIVE */
+@media(max-width:1060px){
+  .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .port-grid{grid-template-columns:1fr}
+  .port-item.wide{grid-column:auto}
+  .proc-grid{grid-template-columns:repeat(2,1fr)}
+  .tst-grid{grid-template-columns:repeat(2,1fr)}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:44px}
+}
+@media(max-width:768px){
+  :root{--nav-h:66px}
+  .nav-links,.nav-pill{display:none}
+  .hbg{display:flex}
+  .hero-body{grid-template-columns:1fr}
+  .hero-aside{align-items:flex-start}
+  .hero-desc{text-align:left}
+  .intro-g{grid-template-columns:1fr}
+  .intro-ghost{display:none}
+  .stats{flex-wrap:wrap;gap:36px}
+  .sec-hd{flex-direction:column;align-items:flex-start}
+  .svc-grid{grid-template-columns:1fr}
+  .faq-grid{grid-template-columns:1fr}
+  .faq-sidebar{position:static}
+  .ct-grid{grid-template-columns:1fr}
+  .proc-grid{grid-template-columns:1fr}
+  .tst-grid{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .foot-bottom{flex-direction:column;align-items:flex-start}
+  .hero-scroll{display:none}
+  .bf-vr{display:none}
+  .ba-label{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:480px){
+  .hero-actions{flex-direction:column;align-items:flex-start;gap:20px}
+  .stats{flex-direction:column;gap:22px}
+}
+</style>
+</head>
+<body>
+
+<div id="prog"><div id="prog-bar"></div></div>
+<div id="c-dot"></div>
+<div id="c-ring"></div>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-in">
+    <a href="#" class="brand">
+      <div class="brand-name">LuxeNest</div>
+      <div class="brand-sub">Interiors · Mumbai</div>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#services" data-section="services">Services</a></li>
+      <li><a href="#portfolio" data-section="portfolio">Portfolio</a></li>
+      <li><a href="#process" data-section="process">Process</a></li>
+      <li><a href="#faq" data-section="faq">FAQ</a></li>
+    </ul>
+    <a href="#contact" class="nav-pill"><span>Begin a Project</span></a>
+    <button class="hbg" id="hbg" aria-label="Open menu"><i></i><i></i><i></i></button>
+  </div>
+</nav>
+
+<div class="mnav" id="mnav" aria-hidden="true">
+  <ul>
+    <li><a href="#services" class="ml">Services</a></li>
+    <li><a href="#portfolio" class="ml">Portfolio</a></li>
+    <li><a href="#process" class="ml">Process</a></li>
+    <li><a href="#faq" class="ml">FAQ</a></li>
+    <li><a href="#contact" class="ml">Contact</a></li>
+  </ul>
+  <div class="mnav-contact">hello@luxenest.in<br>+91 88486 80277</div>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-media">
+    <img id="hero-img" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=88&fit=crop&crop=center" alt="Luxury interior living room designed by LuxeNest" loading="eager" fetchpriority="high" onerror="this.style.display='none'">
+  </div>
+  <div class="hero-veil"></div>
+  <div class="hero-body">
+    <div>
+      <div class="hero-tag">
+        <span class="ey" style="color:var(--g3)">Est. 2009</span>
+        <span class="hero-tag-rule"></span>
+        <span class="ey" style="color:var(--g3)">Mumbai</span>
+      </div>
+      <h1 class="hero-title">
+        A Room<br>
+        Should Tell<br>
+        Your<br>
+        <span class="gold">Story.</span>
+      </h1>
+    </div>
+    <div class="hero-aside">
+      <p class="hero-desc">We design homes you stop noticing as houses — because they've quietly become the most honest expression of who you are.</p>
+      <div class="hero-actions">
+        <a href="#portfolio" class="btn-gold"><span class="btx">See the Work</span></a>
+        <a href="#contact" class="btn-ghost"><span class="btx">Let's Talk</span></a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll" aria-hidden="true">
+    <div class="hero-scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="mq" aria-hidden="true">
+  <div class="mq-track">
+    <div class="mq-item"><span>Residential</span><span class="dot"></span><span>Commercial</span><span class="dot"></span><span>Hospitality</span><span class="dot"></span><span>Mumbai</span><span class="dot"></span><span>Delhi</span><span class="dot"></span><span>Bengaluru</span><span class="dot"></span><span>18 Awards</span><span class="dot"></span><span>15 Years in Practice</span><span class="dot"></span></div>
+    <div class="mq-item"><span>Residential</span><span class="dot"></span><span>Commercial</span><span class="dot"></span><span>Hospitality</span><span class="dot"></span><span>Mumbai</span><span class="dot"></span><span>Delhi</span><span class="dot"></span><span>Bengaluru</span><span class="dot"></span><span>18 Awards</span><span class="dot"></span><span>15 Years in Practice</span><span class="dot"></span></div>
+    <div class="mq-item"><span>Residential</span><span class="dot"></span><span>Commercial</span><span class="dot"></span><span>Hospitality</span><span class="dot"></span><span>Mumbai</span><span class="dot"></span><span>Delhi</span><span class="dot"></span><span>Bengaluru</span><span class="dot"></span><span>18 Awards</span><span class="dot"></span><span>15 Years in Practice</span><span class="dot"></span></div>
+  </div>
+</div>
+
+<!-- INTRO -->
+<section class="sec intro-wrap" id="about">
+  <div class="w">
+    <div class="intro-g">
+      <div data-v="left" aria-hidden="true"><div class="intro-ghost">15</div></div>
+      <div>
+        <div class="ey" data-v data-delay="1">About the Studio</div>
+        <h2 class="intro-h" data-v data-delay="2" style="margin-top:20px">Good Design Is<br>Felt Before<br><span class="gold">It Is Seen.</span></h2>
+        <p class="intro-body" data-v data-delay="3">LuxeNest is a full-service interior design practice based in Mumbai. We work slowly and intentionally — always with clients who understand that the finest rooms aren't really about furniture. They're about the particular life that happens inside them.</p>
+        <div class="stats-rule" data-v data-delay="3"></div>
+        <div class="stats" data-v data-delay="4">
+          <div><div class="stat-num">340+</div><div class="stat-lbl">Projects</div></div>
+          <div><div class="stat-num">15</div><div class="stat-lbl">Years</div></div>
+          <div><div class="stat-num">18</div><div class="stat-lbl">Awards</div></div>
+        </div>
+        <a href="#portfolio" class="lnk" data-v data-delay="5">View Portfolio <svg width="20" height="9" viewBox="0 0 20 9" fill="none" class="arr"><path d="M1 4.5h18M13.5 1l5 3.5-5 3.5" stroke="currentColor" stroke-width="1" stroke-linecap="square"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- SERVICES -->
+<section class="sec svc-wrap" id="services">
+  <div class="w">
+    <div class="sec-hd">
+      <div>
+        <div class="ey" data-v>What We Do</div>
+        <h2 class="h2" data-v data-delay="1" style="margin-top:18px;color:var(--tx)">Six Disciplines.<br>One Coherent Vision.</h2>
+      </div>
+      <a href="#contact" class="lnk" data-v data-delay="2">All Services <svg width="20" height="9" viewBox="0 0 20 9" fill="none" class="arr"><path d="M1 4.5h18M13.5 1l5 3.5-5 3.5" stroke="currentColor" stroke-width="1" stroke-linecap="square"/></svg></a>
+    </div>
+    <div class="svc-grid">
+      <div class="svc" data-v data-delay="1">
+        <div class="svc-num">01</div>
+        <svg class="svc-ico" viewBox="0 0 40 40" fill="none"><rect x="4" y="4" width="32" height="32" stroke="#847769" stroke-width="1"/><path d="M10 28V16l10-8 10 8v12" stroke="#847769" stroke-width="1"/><rect x="15" y="22" width="10" height="10" stroke="#847769" stroke-width="1"/></svg>
+        <div class="svc-title">Residential Design</div>
+        <p class="svc-body">Private homes shaped around who lives in them — not around what looked good on a mood board.</p>
+        <div class="svc-cta">Explore <svg width="14" height="7" viewBox="0 0 14 7" fill="none"><path d="M1 3.5h12M9.5 1l4 2.5-4 2.5" stroke="currentColor" stroke-width="1"/></svg></div>
+      </div>
+      <div class="svc" data-v data-delay="2">
+        <div class="svc-num">02</div>
+        <svg class="svc-ico" viewBox="0 0 40 40" fill="none"><rect x="3" y="8" width="34" height="26" stroke="#847769" stroke-width="1"/><path d="M3 14h34M14 14v20" stroke="#847769" stroke-width="1"/><path d="M8 8V4M20 8V4M32 8V4" stroke="#847769" stroke-width="1"/></svg>
+        <div class="svc-title">Commercial Interiors</div>
+        <p class="svc-body">Offices and showrooms that make people want to stay — where brand identity is understood, not stated.</p>
+        <div class="svc-cta">Explore <svg width="14" height="7" viewBox="0 0 14 7" fill="none"><path d="M1 3.5h12M9.5 1l4 2.5-4 2.5" stroke="currentColor" stroke-width="1"/></svg></div>
+      </div>
+      <div class="svc" data-v data-delay="3">
+        <div class="svc-num">03</div>
+        <svg class="svc-ico" viewBox="0 0 40 40" fill="none"><path d="M4 8h32v24H4z" stroke="#847769" stroke-width="1"/><path d="M4 8l16 14L36 8" stroke="#847769" stroke-width="1"/></svg>
+        <div class="svc-title">Space Planning</div>
+        <p class="svc-body">How a room breathes and moves — the invisible decisions that make or break everything visible above them.</p>
+        <div class="svc-cta">Explore <svg width="14" height="7" viewBox="0 0 14 7" fill="none"><path d="M1 3.5h12M9.5 1l4 2.5-4 2.5" stroke="currentColor" stroke-width="1"/></svg></div>
+      </div>
+      <div class="svc" data-v data-delay="1">
+        <div class="svc-num">04</div>
+        <svg class="svc-ico" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="10" stroke="#847769" stroke-width="1"/><path d="M20 4v4M20 32v4M4 20h4M32 20h4M8.69 8.69l2.83 2.83M28.48 28.48l2.83 2.83M28.48 11.52l2.83-2.83M8.69 31.31l2.83-2.83" stroke="#847769" stroke-width="1"/></svg>
+        <div class="svc-title">Lighting Design</div>
+        <p class="svc-body">Light as the final layer — the one that determines whether a room feels inhabited or merely furnished.</p>
+        <div class="svc-cta">Explore <svg width="14" height="7" viewBox="0 0 14 7" fill="none"><path d="M1 3.5h12M9.5 1l4 2.5-4 2.5" stroke="currentColor" stroke-width="1"/></svg></div>
+      </div>
+      <div class="svc" data-v data-delay="2">
+        <div class="svc-num">05</div>
+        <svg class="svc-ico" viewBox="0 0 40 40" fill="none"><rect x="6" y="8" width="20" height="26" stroke="#847769" stroke-width="1"/><rect x="10" y="12" width="12" height="10" stroke="#847769" stroke-width="1"/><path d="M30 12l4 4-4 4M30 24l4 4-4 4" stroke="#847769" stroke-width="1"/></svg>
+        <div class="svc-title">Art Consultation</div>
+        <p class="svc-body">Curating pieces that belong — not as decoration but as part of the story the room is already telling.</p>
+        <div class="svc-cta">Explore <svg width="14" height="7" viewBox="0 0 14 7" fill="none"><path d="M1 3.5h12M9.5 1l4 2.5-4 2.5" stroke="currentColor" stroke-width="1"/></svg></div>
+      </div>
+      <div class="svc" data-v data-delay="3">
+        <div class="svc-num">06</div>
+        <svg class="svc-ico" viewBox="0 0 40 40" fill="none"><path d="M8 32V18l12-10 12 10v14" stroke="#847769" stroke-width="1"/><path d="M16 32v-8h8v8" stroke="#847769" stroke-width="1"/><path d="M4 18h32" stroke="#847769" stroke-width="1"/></svg>
+        <div class="svc-title">Full-Service Projects</div>
+        <p class="svc-body">End-to-end: concept through handover. One point of contact, total accountability, no gaps between vision and reality.</p>
+        <div class="svc-cta">Explore <svg width="14" height="7" viewBox="0 0 14 7" fill="none"><path d="M1 3.5h12M9.5 1l4 2.5-4 2.5" stroke="currentColor" stroke-width="1"/></svg></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- PORTFOLIO -->
+<section class="sec port-wrap" id="portfolio">
+  <div class="w">
+    <div class="sec-hd">
+      <div>
+        <div class="ey" data-v>Selected Work</div>
+        <h2 class="h2" data-v data-delay="1" style="margin-top:18px;color:var(--tx)">Spaces That<br>Stay With You.</h2>
+      </div>
+      <a href="#contact" class="lnk" data-v data-delay="2">All Projects <svg width="20" height="9" viewBox="0 0 20 9" fill="none" class="arr"><path d="M1 4.5h18M13.5 1l5 3.5-5 3.5" stroke="currentColor" stroke-width="1" stroke-linecap="square"/></svg></a>
+    </div>
+    <div class="port-grid">
+      <div class="port-item wide" data-v>
+        <div class="port-img-box">
+          <img class="port-img" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=85&fit=crop&crop=center" alt="The Oberoi Penthouse interior by LuxeNest" loading="lazy">
+          <div class="port-veil"></div>
+          <div class="port-ov"><div class="port-ov-tag">Mumbai · Residential</div><div class="port-ov-name">The Oberoi Penthouse</div></div>
+        </div>
+        <div class="port-info">
+          <div><div class="port-num">01</div><div class="port-name">The Oberoi Penthouse</div><div class="port-type">Residential · Mumbai</div></div>
+          <div class="port-arr"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 11L11 2M11 2H5M11 2v6" stroke="#706858" stroke-width="1" stroke-linecap="square"/></svg></div>
+        </div>
+      </div>
+      <div class="port-item" data-v data-delay="1">
+        <div class="port-img-box">
+          <img class="port-img" src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=900&q=85&fit=crop" alt="Kapoor Villa interior by LuxeNest" loading="lazy">
+          <div class="port-veil"></div>
+          <div class="port-ov"><div class="port-ov-tag">Delhi · Residential</div><div class="port-ov-name">Kapoor Villa</div></div>
+        </div>
+        <div class="port-info">
+          <div><div class="port-num">02</div><div class="port-name">Kapoor Villa</div><div class="port-type">Residential · Delhi</div></div>
+          <div class="port-arr"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 11L11 2M11 2H5M11 2v6" stroke="#706858" stroke-width="1" stroke-linecap="square"/></svg></div>
+        </div>
+      </div>
+      <div class="port-item" data-v data-delay="2">
+        <div class="port-img-box">
+          <img class="port-img" src="https://images.unsplash.com/photo-1615529182904-14819c35db37?w=900&q=85&fit=crop" alt="Whitefield Executive Suites by LuxeNest" loading="lazy">
+          <div class="port-veil"></div>
+          <div class="port-ov"><div class="port-ov-tag">Bengaluru · Commercial</div><div class="port-ov-name">Whitefield Suites</div></div>
+        </div>
+        <div class="port-info">
+          <div><div class="port-num">03</div><div class="port-name">Whitefield Suites</div><div class="port-type">Commercial · Bengaluru</div></div>
+          <div class="port-arr"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 11L11 2M11 2H5M11 2v6" stroke="#706858" stroke-width="1" stroke-linecap="square"/></svg></div>
+        </div>
+      </div>
+      <div class="port-item wide" data-v>
+        <div class="port-img-box">
+          <img class="port-img" src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=1600&q=85&fit=crop&crop=center" alt="Mehta Bungalow interior by LuxeNest" loading="lazy">
+          <div class="port-veil"></div>
+          <div class="port-ov"><div class="port-ov-tag">Pune · Residential</div><div class="port-ov-name">Mehta Bungalow</div></div>
+        </div>
+        <div class="port-info">
+          <div><div class="port-num">04</div><div class="port-name">Mehta Bungalow</div><div class="port-type">Residential · Pune</div></div>
+          <div class="port-arr"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 11L11 2M11 2H5M11 2v6" stroke="#706858" stroke-width="1" stroke-linecap="square"/></svg></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER SLIDER -->
+<section class="ba-wrap" id="transformation">
+  <div class="w">
+    <div class="ba-label">
+      <div>
+        <div class="ey" data-v>Transformation</div>
+        <h2 class="h2" data-v data-delay="1" style="margin-top:18px;color:var(--tx)">Before &amp; After.<br>The Same Room,<br><span style="color:var(--g3)">Reimagined.</span></h2>
+      </div>
+      <p class="lead" data-v data-delay="2" style="max-width:34ch;text-align:right">Drag the handle to see the full extent of the transformation on the Oberoi Penthouse living room.</p>
+    </div>
+    <div class="ba-container" id="ba" data-v role="img" aria-label="Before and after comparison slider for the Oberoi Penthouse renovation">
+      <div class="ba-after">
+        <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1600&q=85&fit=crop&crop=center" alt="After: Oberoi Penthouse redesigned by LuxeNest">
+      </div>
+      <div class="ba-before" id="ba-before">
+        <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1600&q=85&fit=crop&crop=center" alt="Before: Oberoi Penthouse prior to renovation">
+      </div>
+      <div class="ba-divider" id="ba-divider"></div>
+      <div class="ba-handle" id="ba-handle">
+        <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7 5l-5 5 5 5M13 5l5 5-5 5" stroke="#0A0906" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="ba-tag before">Before</div>
+      <div class="ba-tag after">After</div>
+      <div class="ba-pill">Drag to Compare</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="sec proc-wrap" id="process">
+  <div class="w">
+    <div class="proc-hd">
+      <div class="ey" data-v>How We Work</div>
+      <h2 class="h2" style="color:var(--tx);margin-top:18px" data-v data-delay="1">Unhurried.<br>Precise. Yours.</h2>
+    </div>
+    <div class="proc-grid">
+      <div class="proc-step" data-v data-delay="1">
+        <div class="proc-n">01</div>
+        <div class="proc-title">Listen</div>
+        <p class="proc-body">Before we draw a single line, we sit with you. We ask about the light in the morning, the objects you can't throw away, the kind of tired you feel at the end of a good day. Design begins here.</p>
+      </div>
+      <div class="proc-step" data-v data-delay="2">
+        <div class="proc-n">02</div>
+        <div class="proc-title">Propose</div>
+        <p class="proc-body">A considered concept: spatial plans, material stories, lighting moods, furniture selections. Not a presentation to impress — a proposal to interrogate together.</p>
+      </div>
+      <div class="proc-step" data-v data-delay="3">
+        <div class="proc-n">03</div>
+        <div class="proc-title">Build</div>
+        <p class="proc-body">We coordinate everything — craftspeople, logistics, impossible lead times — so you don't have to think about it. Our job is to make the process disappear while the result materialises.</p>
+      </div>
+      <div class="proc-step" data-v data-delay="4">
+        <div class="proc-n">04</div>
+        <div class="proc-title">Hand Over</div>
+        <p class="proc-body">We don't hand you keys to a finished room. We hand back a version of your life that fits a little better than before. That's what we're really building.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="sec tst-wrap" id="testimonials">
+  <div class="w">
+    <div class="sec-hd">
+      <div>
+        <div class="ey" data-v>Client Voices</div>
+        <h2 class="h2" data-v data-delay="1" style="margin-top:18px;color:var(--tx)">What the Work<br>Meant to Them.</h2>
+      </div>
+    </div>
+    <div class="tst-grid">
+      <div class="tst-card" data-v data-delay="1">
+        <p class="tst-quote">"I stopped giving people tours of the flat. Now I just watch their face when they walk in. LuxeNest gave me that."</p>
+        <div class="tst-rule"></div>
+        <div class="tst-name">Priya M.</div>
+        <div class="tst-proj">The Oberoi Penthouse, Mumbai</div>
+      </div>
+      <div class="tst-card" data-v data-delay="2">
+        <p class="tst-quote">"They asked questions no one had ever asked us about how we live. By the time they presented, the concept already felt like ours. Because it was."</p>
+        <div class="tst-rule"></div>
+        <div class="tst-name">Rahul &amp; Ananya K.</div>
+        <div class="tst-proj">Kapoor Villa, Delhi</div>
+      </div>
+      <div class="tst-card" data-v data-delay="3">
+        <p class="tst-quote">"Our clients thought we'd moved to a new office. We hadn't moved — we'd finally built a space that matched how we think."</p>
+        <div class="tst-rule"></div>
+        <div class="tst-name">Siddharth R.</div>
+        <div class="tst-proj">Whitefield Suites, Bengaluru</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BRAND FEATURE -->
+<section class="bf">
+  <div class="bf-media">
+    <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=1600&q=85&fit=crop&crop=center" alt="Elegant interior space by LuxeNest" loading="lazy">
+  </div>
+  <div class="bf-veil"></div>
+  <div class="bf-vr r1" aria-hidden="true"></div>
+  <div class="bf-vr r2" aria-hidden="true"></div>
+  <div class="bf-content">
+    <div class="ey" style="color:var(--g3);margin-bottom:32px" data-v>Our Belief</div>
+    <h2 class="bf-title" data-v data-delay="1">The Finest Rooms<br>Don't Announce<br>Themselves. They<br>Simply <span class="gold">Hold You.</span></h2>
+    <p class="bf-body" data-v data-delay="2">We don't impose. We don't trend-chase. We sit with the question of who you are and what you need from the places you call home — and then we build exactly that.</p>
+    <div data-v data-delay="3"><a href="#contact" class="btn-gold"><span class="btx">Start the Conversation</span></a></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec faq-wrap" id="faq">
+  <div class="w">
+    <div class="faq-grid">
+      <div class="faq-sidebar">
+        <div class="ey" data-v>Questions</div>
+        <h2 class="h2" data-v data-delay="1" style="margin-top:18px;color:var(--tx)">What People<br>Ask First.</h2>
+        <p class="lead" data-v data-delay="2" style="margin-top:24px">Anything not covered:<br><a href="mailto:hello@luxenest.in" style="color:var(--g3)">hello@luxenest.in</a></p>
+      </div>
+      <div data-v data-delay="2">
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false"><span class="faq-q">What kinds of projects do you take on?</span><div class="faq-ic" aria-hidden="true"></div></button>
+          <div class="faq-ans" role="region"><div class="faq-ans-body">Residential, commercial, and hospitality — from a single carefully considered room to a full bungalow. We work across Mumbai, Delhi, Bengaluru, Pune, and select international projects. Typical total investment begins at ₹30 lakh.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false"><span class="faq-q">How long will my project take?</span><div class="faq-ic" aria-hidden="true"></div></button>
+          <div class="faq-ans" role="region"><div class="faq-ans-body">An apartment or focused residential project typically runs 4–6 months from concept to handover. A full bungalow or major renovation is usually 10–18 months. We're honest about timelines from day one — and we set milestones that actually mean something.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false"><span class="faq-q">Can you work around pieces I already own?</span><div class="faq-ic" aria-hidden="true"></div></button>
+          <div class="faq-ans" role="region"><div class="faq-ans-body">Some of our strongest work has been built around a client's grandmother's cabinet or a painting bought on a first trip abroad. Things with history make rooms with character. We'd rather work around what matters to you than start blank every time.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false"><span class="faq-q">How do you handle costs and procurement?</span><div class="faq-ic" aria-hidden="true"></div></button>
+          <div class="faq-ans" role="region"><div class="faq-ans-body">Total transparency. Design fees are fixed and agreed upfront. Furnishings and materials are itemised fully before anything is ordered. You never encounter a surprise on the invoice — we find that makes for better working relationships and better rooms.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false"><span class="faq-q">Do you work outside Mumbai?</span><div class="faq-ic" aria-hidden="true"></div></button>
+          <div class="faq-ans" role="region"><div class="faq-ans-body">Yes — Delhi, Bengaluru, Pune, Hyderabad, and internationally. We travel for site visits and reviews, and we've refined a remote collaboration process that ensures nothing is lost across distance.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false"><span class="faq-q">What actually makes LuxeNest different?</span><div class="faq-ic" aria-hidden="true"></div></button>
+          <div class="faq-ans" role="region"><div class="faq-ans-body">Probably the fact that we're not trying to make our portfolio — we're trying to make your home. There's a version of design that's really about the designer. We try to make a version that's entirely about you. Fifteen years in, that distinction is what clients remember.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="sec ct-wrap" id="contact">
+  <div class="w">
+    <div class="ct-grid">
+      <div data-v="left">
+        <div class="ey" style="color:var(--g2)">Let's Begin</div>
+        <h2 class="ct-title" style="margin-top:22px">Tell Us About<br>the Room<br><span class="gold">In Your Head.</span></h2>
+        <p class="ct-body">We respond to every enquiry within 24 hours. No automated replies — a real conversation about whether we're the right fit for each other.</p>
+        <div><div class="ci-label">Email</div><div class="ci-val"><a href="mailto:hello@luxenest.in" style="color:inherit">hello@luxenest.in</a></div></div>
+        <div><div class="ci-label">Studios</div><div class="ci-val">Mumbai · Delhi · Bengaluru</div></div>
+        <div><div class="ci-label">Phone</div><div class="ci-val"><a href="tel:+918848680277" style="color:inherit">+91 88486 80277</a></div></div>
+      </div>
+      <div data-v data-delay="2">
+        <form id="enquiry-form" novalidate>
+          <div class="form-group" id="fg-name">
+            <label class="form-label" for="f-name">Your Name</label>
+            <input type="text" id="f-name" class="form-ctrl" placeholder="Full name" autocomplete="name">
+            <div class="form-line"></div>
+            <div class="form-err" aria-live="polite">Please enter your name</div>
+          </div>
+          <div class="form-group" id="fg-email">
+            <label class="form-label" for="f-email">Email</label>
+            <input type="email" id="f-email" class="form-ctrl" placeholder="your@email.com" autocomplete="email">
+            <div class="form-line"></div>
+            <div class="form-err" aria-live="polite">Please enter a valid email address</div>
+          </div>
+          <div class="form-group" id="fg-phone">
+            <label class="form-label" for="f-phone">Mobile Number</label>
+            <input type="tel" id="f-phone" class="form-ctrl" placeholder="+91 XXXXX XXXXX" autocomplete="tel">
+            <div class="form-line"></div>
+            <div class="form-err" aria-live="polite">Please enter a valid mobile number</div>
+          </div>
+          <div class="form-group" id="fg-type">
+            <label class="form-label" for="f-type">Project Type</label>
+            <select id="f-type" class="form-ctrl">
+              <option value="">Select one</option>
+              <option>Residential Design</option>
+              <option>Commercial Interiors</option>
+              <option>Space Planning</option>
+              <option>Lighting Design</option>
+              <option>Art Consultation</option>
+              <option>Full-Service Project</option>
+            </select>
+            <div class="form-line"></div>
+            <div class="form-err" aria-live="polite">Please select a project type</div>
+          </div>
+          <div class="form-group" id="fg-msg">
+            <label class="form-label" for="f-msg">About Your Project</label>
+            <textarea id="f-msg" class="form-ctrl" placeholder="The space, the timeline, what you're hoping for…" rows="4"></textarea>
+            <div class="form-line"></div>
+            <div class="form-err" aria-live="polite">Please tell us about your project</div>
+          </div>
+          <button type="submit" class="form-submit"><span class="btx">Send Enquiry</span></button>
+          <p class="form-note">Enquiries are sent to <a href="mailto:hello@luxenest.in">hello@luxenest.in</a>. We respond within 24 hours.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="w">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand-name">LuxeNest</div>
+        <div class="foot-brand-sub">Interiors · Mumbai</div>
+        <p class="foot-tagline">Interior design for people who understand that the best rooms are never really about the design.</p>
+        <div class="foot-social">
+          <a href="#" aria-label="Instagram"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="white" stroke-width="1.5"/><circle cx="12" cy="12" r="5" stroke="white" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="white"/></svg></a>
+          <a href="#" aria-label="Pinterest"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="white" stroke-width="1.5"/><path d="M10 16c0-2 2-8 2-8s2 8 2 8" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="3" stroke="white" stroke-width="1.5"/><path d="M7 10v7M7 7.5v.01M12 17v-3.5a2 2 0 014 0V17M12 10v7" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <div class="foot-col-title">Services</div>
+        <ul class="foot-links">
+          <li><a href="#services">Residential Design</a></li>
+          <li><a href="#services">Commercial Interiors</a></li>
+          <li><a href="#services">Space Planning</a></li>
+          <li><a href="#services">Lighting Design</a></li>
+          <li><a href="#services">Art Consultation</a></li>
+          <li><a href="#services">Procurement</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="foot-col-title">Studio</div>
+        <ul class="foot-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="foot-col-title">Reach Us</div>
+        <ul class="foot-links">
+          <li><a href="mailto:hello@luxenest.in">hello@luxenest.in</a></li>
+          <li><a href="tel:+918848680277">+91 88486 80277</a></li>
+          <li><a href="#">Mumbai Studio</a></li>
+          <li><a href="#">Delhi NCR</a></li>
+          <li><a href="#">Bengaluru</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div class="foot-copy">&copy; <span id="yr"></span> LuxeNest Interiors Pvt. Ltd. All rights reserved.</div>
+      <ul class="foot-legal">
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Terms</a></li>
+        <li><a href="#">Cookies</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+'use strict';
+document.getElementById('yr').textContent = new Date().getFullYear();
+window.addEventListener('load', () => document.body.classList.add('rdy'));
+const dot = document.getElementById('c-dot'), ring = document.getElementById('c-ring');
+let mx = 0, my = 0, rx = 0, ry = 0;
+document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; dot.style.left = mx + 'px'; dot.style.top = my + 'px'; });
+document.addEventListener('mousedown', () => ring.classList.add('dn'));
+document.addEventListener('mouseup', () => ring.classList.remove('dn'));
+(function tick() { rx += (mx - rx) * .09; ry += (my - ry) * .09; ring.style.left = rx + 'px'; ring.style.top = ry + 'px'; requestAnimationFrame(tick); })();
+document.querySelectorAll('a,button,.svc,.port-item,.ba-container').forEach(el => { el.addEventListener('mouseenter', () => ring.classList.add('hov')); el.addEventListener('mouseleave', () => ring.classList.remove('hov')); });
+const pbar = document.getElementById('prog-bar');
+window.addEventListener('scroll', () => { pbar.style.width = Math.min(window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100, 100) + '%'; }, { passive: true });
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('stuck', window.scrollY > 28), { passive: true });
+const sections = ['services','portfolio','process','faq','contact'];
+const navAnchors = document.querySelectorAll('.nav-links a[data-section]');
+function updateActiveNav() { let current = ''; sections.forEach(id => { const el = document.getElementById(id); if (el && window.scrollY >= el.offsetTop - 120) current = id; }); navAnchors.forEach(a => a.classList.toggle('active', a.dataset.section === current)); }
+window.addEventListener('scroll', updateActiveNav, { passive: true });
+const hbg = document.getElementById('hbg'), mnav = document.getElementById('mnav');
+hbg.addEventListener('click', () => { const o = hbg.classList.toggle('on'); mnav.classList.toggle('on', o); mnav.setAttribute('aria-hidden', String(!o)); document.body.style.overflow = o ? 'hidden' : ''; });
+document.querySelectorAll('.ml').forEach(l => l.addEventListener('click', () => { hbg.classList.remove('on'); mnav.classList.remove('on'); mnav.setAttribute('aria-hidden', 'true'); document.body.style.overflow = ''; }));
+const obs = new IntersectionObserver(es => { es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); obs.unobserve(e.target); } }); }, { threshold: .08, rootMargin: '0px 0px -48px 0px' });
+document.querySelectorAll('[data-v]').forEach(el => obs.observe(el));
+document.querySelectorAll('.faq-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item'); const ans = item.querySelector('.faq-ans'); const body = item.querySelector('.faq-ans-body'); const was = item.classList.contains('on');
+    document.querySelectorAll('.faq-item.on').forEach(o => { o.classList.remove('on'); o.querySelector('.faq-ans').style.maxHeight = '0'; o.querySelector('.faq-btn').setAttribute('aria-expanded', 'false'); });
+    if (!was) { item.classList.add('on'); ans.style.maxHeight = body.scrollHeight + 'px'; btn.setAttribute('aria-expanded', 'true'); }
+  });
+});
+const heroImg = document.getElementById('hero-img');
+let heroH = window.innerHeight;
+window.addEventListener('resize', () => heroH = window.innerHeight, { passive: true });
+window.addEventListener('scroll', () => { if (heroImg && window.scrollY < heroH * 1.2) heroImg.style.transform = `scale(1) translateY(${window.scrollY * .18}px)`; }, { passive: true });
+const form = document.getElementById('enquiry-form');
+function validateField(inputEl, groupId) { const group = document.getElementById(groupId); const val = inputEl.value.trim(); let ok = val.length > 0; if (inputEl.type === 'email') ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val); if (inputEl.type === 'tel') ok = /^[+\d\s\-()]{7,}$/.test(val); group.classList.toggle('error', !ok); if (!ok) { group.style.animation = 'none'; group.offsetHeight; group.style.animation = ''; } return ok; }
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  const nameOk = validateField(document.getElementById('f-name'), 'fg-name'); const emailOk = validateField(document.getElementById('f-email'), 'fg-email'); const phoneOk = validateField(document.getElementById('f-phone'), 'fg-phone'); const typeEl = document.getElementById('f-type'); const typeOk = typeEl.value !== ''; document.getElementById('fg-type').classList.toggle('error', !typeOk); const msgOk = validateField(document.getElementById('f-msg'), 'fg-msg');
+  if (!nameOk || !emailOk || !phoneOk || !typeOk || !msgOk) return;
+  const sub = form.querySelector('.form-submit'); const txt = sub.querySelector('.btx'); txt.textContent = 'Sent — Thank You'; sub.disabled = true;
+  const name = document.getElementById('f-name').value.trim(); const email = document.getElementById('f-email').value.trim(); const phone = document.getElementById('f-phone').value.trim(); const type = typeEl.value; const msg = document.getElementById('f-msg').value.trim();
+  const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nProject Type: ${type}\n\n${msg}`);
+  window.location.href = `mailto:hello@luxenest.in?subject=Project+Enquiry+from+${encodeURIComponent(name)}&body=${body}`;
+  setTimeout(() => { txt.textContent = 'Send Enquiry'; sub.disabled = false; form.reset(); ['fg-name','fg-email','fg-phone','fg-type','fg-msg'].forEach(id => document.getElementById(id).classList.remove('error')); }, 5500);
+});
+['f-name','f-email','f-phone','f-type','f-msg'].forEach((id, i) => { const groupIds = ['fg-name','fg-email','fg-phone','fg-type','fg-msg']; document.getElementById(id).addEventListener('input', () => { document.getElementById(groupIds[i]).classList.remove('error'); }); });
+(function () {
+  const container = document.getElementById('ba'); if (!container) return;
+  const before = document.getElementById('ba-before'); const divider = document.getElementById('ba-divider'); const handle = document.getElementById('ba-handle');
+  let dragging = false;
+  function setPos(pct) { pct = Math.max(2, Math.min(98, pct)); before.style.clipPath = `inset(0 ${100 - pct}% 0 0)`; divider.style.left = pct + '%'; handle.style.left = pct + '%'; }
+  function getPercent(e) { const rect = container.getBoundingClientRect(); const clientX = e.touches ? e.touches[0].clientX : e.clientX; return ((clientX - rect.left) / rect.width) * 100; }
+  container.addEventListener('mousedown', e => { dragging = true; setPos(getPercent(e)); e.preventDefault(); });
+  window.addEventListener('mouseup', () => dragging = false);
+  window.addEventListener('mousemove', e => { if (dragging) setPos(getPercent(e)); });
+  container.addEventListener('touchstart', e => { dragging = true; setPos(getPercent(e)); }, { passive: true });
+  window.addEventListener('touchend', () => dragging = false);
+  window.addEventListener('touchmove', e => { if (dragging) setPos(getPercent(e)); }, { passive: true });
+  setPos(50);
+})();
+</script>
+</body>
+</html>
